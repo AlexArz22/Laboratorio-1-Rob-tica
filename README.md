@@ -43,3 +43,21 @@ Sin encoders, el robot no puede medir directamente la velocidad real de sus moto
 
 
 PARTE 2 - PREGUNTAS
+
+¿Cómo se calcula la velocidad del robot sin encoders usando PWM?
+
+Respuesta: Como el PWM puede controlar la cantidad de voltaje suministrada, se puede calcular experimentalmente la velocidad en base al valor de PWM, entonces, mientras mayor sea el PWM, mayor será la velocidad. A partir de ahí se podría hacer una tabla de valores para que a partir del PWM saber la velocidad que tendrá.
+
+¿Cómo factores afectan la trayectoria y velocidad del robot al cambiar los intervalos de tiempo?
+
+Intervalos de tiempo más cortos pueden afectar de manera positiva para el cálculo de la trayectoria, puesto que estos al ser más repetitivos, puede tener una trayectoria más precisa.
+
+Mientras tanto, la velocidad no se debería ver afectada por los intervalos de tiempo, puesto que si es que estos son más amplios o más cortos, la fórmula sigue siendo la misma v = d/t, en donde si es que el robot se mueve en una distancia de manera constante, se mantendría en proporción con el tiempo, ahora, si es que el robot tiene una velocidad irregular, no sería lo mejor que fueran intervalos de tiempo muy grandes, puesto que lo hace más susceptible a errores de calculo o desviaciones.
+
+¿Cuáles son las ventajas y desventajas de usar un IMU para ajustar la dirección en lugar de encoders?
+
+Cómo los encoders miden las vueltas que da una rueda, son mas precisos al medir la distancia y dirección, pero por lo mismo, dependen de un buen contacto de las ruedas con el suelo para ser eficientes. Mientras que el IMU puede ajustar la dirección sin depender de las ruedas, siendo más útil en terrenos irregulares, la desventaja que tiene es que requiere de una calibración constante. El IMU también es mejor midiendo y detectando inclinaciones y giros rápidos del robot, mientras que los encoders funcionan mejor para trayectorias largas y definidas.
+
+¿Qué efecto tiene la inclinación o el giro en el movimiento del robot, y cómo se corrige con el IMU?
+
+La inclinación o el giro en el movimiento del robot afectan en la estabilidad y dirección del mismo, provocando que se pueda desviar de su trayectoria. El IMU detecta estos cambios con el acelerómetro y el giroscopio, información con la cual el robot puede ajustar la velocidad de los motores o la dirección.
